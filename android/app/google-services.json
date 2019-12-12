@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "588205590505",
+    "firebase_url": "https://eobjectives-9fc68.firebaseio.com",
+    "project_id": "eobjectives-9fc68",
+    "storage_bucket": "eobjectives-9fc68.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:588205590505:android:cbddb5a3fde0f8e63c2d78",
+        "android_client_info": {
+          "package_name": "com.electric"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "588205590505-6kdj5hrkpfer6faq17hpok799uv5d2m2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.electric",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxbDQxcdWXXuTIlCTycM_yxwqAZlfbuN0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "588205590505-q4etihhcmj43so08u0r9738dda2jp230.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
