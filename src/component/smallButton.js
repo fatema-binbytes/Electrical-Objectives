@@ -1,28 +1,15 @@
 import React, {Component} from 'react';
-import {Text, View, TouchableOpacity} from 'react-native';
+import {View, TouchableOpacity} from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import styles from './styles/smallButton-style';
 
 class SmallButton extends Component {
   render() {
-    let extraStyle;
-
-    if (this.props.isLeft) {
-      extraStyle = {
-        borderTopLeftRadius: 50,
-        borderBottomLeftRadius: 50,
-      };
-    } else {
-      extraStyle = {
-        borderTopRightRadius: 50,
-        borderBottomRightRadius: 50,
-      };
-    }
-
     return (
-      <View style={[styles.container, extraStyle]}>
+      <View style={[styles.container]}>
         <TouchableOpacity style={styles.button} onPress={this.props.onPress}>
-          <Text style={styles.buttonText}>{this.props.title}</Text>
+          <Icon name={this.props.icon} size={30} color={'#FFF'} />
         </TouchableOpacity>
       </View>
     );

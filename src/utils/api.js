@@ -31,7 +31,6 @@ export async function POST(
     headers,
     body,
   });
-
   if (res.headers.get(CONTENT_TYPE).startsWith(CONTENT_TYPE_JSON)) {
     const json = await res.json();
     if (res.status === (status === null ? HTTPStatus.OK : status)) {

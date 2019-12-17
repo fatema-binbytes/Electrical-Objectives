@@ -49,7 +49,6 @@ const loadQuestion = (isBookmark, question_no, category_id, navigation) => {
 
 const favorite = id => {
   return (dispatch, getState) => {
-    dispatch(ui.loading(true));
     const info = getState().user.info;
     const body = {
       question_id: id,
@@ -66,7 +65,7 @@ const favorite = id => {
             category_id: questionData.category_id,
             correct_opt: questionData.correct_opt,
             created: questionData.created,
-            favorite: true,
+            favorite: !questionData.favorite,
             id: questionData.id,
             method: questionData.method,
             opt1: questionData.opt1,
@@ -81,7 +80,6 @@ const favorite = id => {
             type: actions.GET_FAVORITE_DATA,
             payload: data,
           });
-          dispatch(ui.loading(false));
         }
       },
     );

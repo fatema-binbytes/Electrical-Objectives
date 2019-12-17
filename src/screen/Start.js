@@ -1,50 +1,58 @@
 import React, {Component} from 'react';
-import {View, TextInput, Text, Keyboard} from 'react-native';
+import {View, TextInput, TouchableOpacity, Text, Keyboard} from 'react-native';
 
-import Button from '../component/button';
-import style from './styles/start-style';
+import styles from './styles/start-style';
 
 class Start extends Component {
-  static navigationOptions = ({navigation}) => {
-    const data = navigation.state.params;
-    return {
-      title: `${data.title}`,
-    };
-  };
-
   constructor(props) {
     super(props);
-    this.nav = this.props.navigation;
     this.state = {
-      question_no: '1',
+      question_no: 1,
+      open: false,
     };
   }
 
   render() {
     return (
-      <View style={style.container}>
-        <View style={style.header}>
-          <Text style={style.labelText}>Start From : </Text>
+      <View style={styles.container}>
+        <View style={styles.title} />
+        <View style={styles.header}>
+          <Text style={styles.labelText}>Start From:</Text>
           <TextInput
+            ref={input => {
+              this.textInput = input;
+            }}
+            onSubmitEditing={() => {
+              this.setState({open: false});
+            }}
             keyboardType={'numeric'}
-            value={this.state.question_no}
-            onChangeText={text => this.setState({question_no: text})}
+            value={this.state.question_no.toString()}
+            onChangeText={text => this.setState({question_no: parseInt(text)})}
           />
-          <Button title={'Start'} onPress={this.start} />
+          {/* <Icon
+          style={{padding:10}}
+            onPress={() => {
+              this.textInput.focus();
+              this.setState({open: true});
+            }}
+            name={'square-edit-outline'}
+            size={30}
+            color={colors.dark_primary_color}
+          /> */}
+        </View>
+        <View style={styles.btnStart}>
+          <TouchableOpacity
+            onPress={() => {
+              Keyboard.dismiss();
+              this.props.onClick(
+                this.state.question_no !== '' ? this.state.question_no : '1',
+              );
+            }}>
+            <Text style={styles.btnTxt}>START</Text>
+          </TouchableOpacity>
         </View>
       </View>
     );
   }
-
-  start = () => {
-    Keyboard.dismiss();
-    const params = {
-      title: this.nav.state.params.title,
-      category_id: this.nav.state.params.category_id,
-      question_no: this.state.question_no !== '' ? this.state.question_no : '1',
-      isBookmark: false,
-    };
-    this.nav.navigate('Question', params);
-  };
 }
 export default Start;

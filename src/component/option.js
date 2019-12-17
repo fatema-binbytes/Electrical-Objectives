@@ -16,14 +16,17 @@ class Option extends Component {
             <Text style={styles.labelText}>{this.props.optionText}</Text>
           </View>
           <View style={styles.htmlView}>
-            <HTMLView stylesheet={answersHtmlStyles} value={this.props.text} />
+            <HTMLView
+              stylesheet={answersHtmlStyles}
+              props={this.props.style}
+              value={this.props.text}
+            />
           </View>
         </TouchableOpacity>
       </View>
     );
   }
 }
-
 const answersHtmlStyles = StyleSheet.create({
   p: {
     fontSize: 14,

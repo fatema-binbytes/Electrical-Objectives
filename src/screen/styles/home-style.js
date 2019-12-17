@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   header: {
-    flex: 1,
+    flex: 1.5,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -17,8 +17,10 @@ const styles = StyleSheet.create({
     resizeMode: 'center',
   },
   content: {
-    flex: 0.6,
-    margin: 16,
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    flexDirection: 'row',
   },
 });
 

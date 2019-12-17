@@ -1,11 +1,13 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
 import {View, Image, StatusBar} from 'react-native';
+import {SlideAnimation} from 'react-native-popup-dialog';
 import {connect} from 'react-redux';
 
 import {user} from '../store/action';
 import colors from '../config/colors';
 import route from '../utils/route';
-import Button from '../component/button';
+import Button from '../component/homeButton';
 import PopupDialog from '../component/PopupDialog';
 import homeStyle from './styles/home-style';
 import Login from '../component/login';
@@ -39,6 +41,11 @@ class Home extends Component {
         <StatusBar backgroundColor={colors.dark_primary_color} />
         <PopupDialog
           visible={this.state.show}
+          animation={
+            new SlideAnimation({
+              slideFrom: 'bottom',
+            })
+          }
           onTouchOutside={() => {
             this.setState({show: false});
           }}>
@@ -57,13 +64,22 @@ class Home extends Component {
         </View>
         <View style={homeStyle.content}>
           <Button
-            title="Get Started"
             onPress={() => this.nav.navigate('Category')}
+            icon={'lightbulb-on'}
+            style={{backgroundColor: '#db566e', borderColor: '#db3755'}}
+            lable={'Quiz'}
           />
-          <Button title="Bookmark" onPress={this.bookmark} />
           <Button
-            title="About App"
+            onPress={this.bookmark}
+            icon={'bookmark'}
+            style={{backgroundColor: '#3672d1', borderColor: '#0d5ddb'}}
+            lable={'Bookmark'}
+          />
+          <Button
             onPress={() => this.nav.navigate('About')}
+            lable={'About'}
+            style={{backgroundColor: '#619654', borderColor: '#3b9624'}}
+            icon={'script-text'}
           />
         </View>
       </View>

@@ -9,19 +9,27 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   panel: {
-    marginTop: 16,
-    marginLeft: 8,
-    marginRight: 8,
-    marginBottom: 16,
+    margin: 16,
     backgroundColor: '#fff',
     borderColor: '#333',
-    borderRadius: 4,
+    borderRadius: 20,
+    padding: 10,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+    elevation: 4,
   },
   question: {
-    margin: 16,
+    margin: 10,
   },
   questionView: {
     flexDirection: 'row',
+    marginVertical: 2,
+    alignItems: 'center',
     justifyContent: 'space-between',
   },
   questionText: {
@@ -35,20 +43,25 @@ const styles = StyleSheet.create({
   },
   optionLabelText: {
     margin: 16,
+    marginTop: 8,
     marginBottom: 8,
     fontWeight: 'bold',
     color: '#999',
     fontSize: 12,
   },
   questionLabelText: {
+    fontSize: 16,
     fontWeight: 'bold',
-    marginBottom: 8,
   },
   correct: {
     backgroundColor: colors.correct_answer,
+    color: 'green',
+    borderColor: 'green',
   },
   wrong: {
     backgroundColor: colors.wrong_answer,
+    color: 'red',
+    borderColor: 'red',
   },
   buttonView: {
     flexDirection: 'row',

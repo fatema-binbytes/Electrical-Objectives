@@ -3,8 +3,9 @@ import colors from '../../config/colors';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 0.35,
     borderWidth: 0.3,
+    borderRadius: 50,
+    marginHorizontal: 20,
     borderColor: colors.default_primary_color,
     backgroundColor: colors.default_primary_color,
   },

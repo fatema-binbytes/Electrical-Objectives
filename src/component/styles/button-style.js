@@ -4,17 +4,18 @@ import colors from '../../config/colors';
 const styles = StyleSheet.create({
   button: {
     margin: 4,
+    marginHorizontal: 15,
     padding: 16,
-    backgroundColor: colors.default_primary_color,
     borderColor: colors.dark_primary_color,
     borderWidth: 0.5,
-    borderRadius: 3,
+    borderRadius: 10,
+    backgroundColor: colors.light_primary_color,
     justifyContent: 'center',
     alignItems: 'center',
+    elevation: 4,
   },
   buttonText: {
-    color: colors.text_primary_color,
-    fontSize: 16,
+    color: colors.dark_primary_color,
     textAlign: 'center',
   },
 });
