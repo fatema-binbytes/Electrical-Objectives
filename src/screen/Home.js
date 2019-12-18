@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import {View, Image, StatusBar} from 'react-native';
 import {SlideAnimation} from 'react-native-popup-dialog';
 import {connect} from 'react-redux';
+import codePush from 'react-native-code-push';
 
 import {user} from '../store/action';
 import colors from '../config/colors';
@@ -21,7 +22,12 @@ class Home extends Component {
       show: false,
     };
   }
-
+  componentDidMount() {
+    this.checkUpdate();
+  }
+  checkUpdate() {
+    codePush.sync();
+  }
   bookmark = () => {
     if (this.props.info === null) {
       this.setState({show: true});
