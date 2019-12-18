@@ -47,6 +47,8 @@ target 'electric' do
 
   pod 'CodePush', :path => '../node_modules/react-native-code-push'
 
+  pod 'react-native-onesignal', :path => '../node_modules/react-native-onesignal'
+
   target 'electricTests' do
     inherit! :search_paths
     # Pods for testing
