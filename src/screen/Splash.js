@@ -6,9 +6,9 @@ import colors from '../config/colors';
 
 class Splash extends Component {
   componentDidMount() {
-    // setTimeout(() => {
-    //   this.props.navigation.replace('Home');
-    // }, 1000);
+    setTimeout(() => {
+      this.props.navigation.replace('Home');
+    }, 1000);
   }
   render() {
     return (
