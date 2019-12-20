@@ -12,8 +12,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   logoText: {
-    color: '#555',
-    fontSize: 26,
+    textAlign: 'center',
+    color: 'grey',
+    fontSize: 20,
+    fontFamily: 'sans-serif-condensed',
+  },
+  bubble: {
+    padding: 20,
+    flex: 0.1,
+    alignItems: 'center',
   },
 });
 
