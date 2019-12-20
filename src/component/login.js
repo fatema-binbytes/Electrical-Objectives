@@ -7,7 +7,7 @@ import {
   View,
 } from 'react-native';
 import {GoogleSignin} from '@react-native-community/google-signin';
-
+import firebase from 'react-native-firebase';
 import styles from './styles/login-style';
 
 class Login extends Component {
@@ -52,8 +52,8 @@ class Login extends Component {
   _signIn = async () => {
     try {
       await GoogleSignin.configure();
-      await GoogleSignin.hasPlayServices();
       const userInfo = await GoogleSignin.signIn();
+      const token = await GoogleSignin.getTokens();
       const user = userInfo.user;
       const body = {
         name: user.name,
@@ -62,6 +62,14 @@ class Login extends Component {
         profile_url: user.photo,
       };
       this.props.onLogin(body);
+      const credential = firebase.auth.GoogleAuthProvider.credential(
+        token.idToken,
+        token.accessToken,
+      );
+      const firebaseUserCredential = await firebase
+        .auth()
+        .signInWithCredential(credential);
+      console.log(firebaseUserCredential);
     } catch (error) {
       console.log(error);
     }

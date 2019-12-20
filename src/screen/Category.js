@@ -10,7 +10,7 @@ import styles from './styles/category-style';
 import colors from '../config/colors';
 import PopupDialog from '../component/PopupDialog';
 import Start from '../screen/Start';
-import {ScaleAnimation} from 'react-native-popup-dialog';
+import {SlideAnimation} from 'react-native-popup-dialog';
 class Category extends Component {
   constructor(props) {
     super(props);
@@ -72,9 +72,8 @@ class Category extends Component {
               this.setState({show: false});
             }}
             animation={
-              new ScaleAnimation({
-                initialValue: 0, // optional
-                useNativeDriver: true, // optional
+              new SlideAnimation({
+                slideFrom: 'bottom',
               })
             }>
             <Start onClick={no => this.start(no)} title={this.state.title} />
