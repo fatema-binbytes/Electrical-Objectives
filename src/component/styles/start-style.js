@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
-    // backgroundColor: '#fff000',
   },
   header: {
     borderColor: colors.dark_primary_color,

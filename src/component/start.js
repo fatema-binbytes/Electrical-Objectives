@@ -29,16 +29,6 @@ class Start extends Component {
             value={this.state.question_no.toString()}
             onChangeText={text => this.setState({question_no: parseInt(text)})}
           />
-          {/* <Icon
-          style={{padding:10}}
-            onPress={() => {
-              this.textInput.focus();
-              this.setState({open: true});
-            }}
-            name={'square-edit-outline'}
-            size={30}
-            color={colors.dark_primary_color}
-          /> */}
         </View>
         <View style={styles.btnStart}>
           <TouchableOpacity

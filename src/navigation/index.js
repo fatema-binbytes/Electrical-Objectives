@@ -6,14 +6,12 @@ import colors from '../config/colors';
 import Splash from '../screen/Splash';
 import Home from '../screen/Home';
 import Category from '../screen/Category';
-import Start from '../screen/Start';
 import Question from '../screen/Question';
 import About from '../screen/About';
 
 YellowBox.ignoreWarnings([
   'Warning: isMounted(...) is deprecated',
   'Module RCTImageLoader',
-  'Require cycle:',
 ]);
 YellowBox.ignoreWarnings(['Require cycle:']);
 const stackNavigator = createStackNavigator({
@@ -33,18 +31,6 @@ const stackNavigator = createStackNavigator({
     screen: Category,
     navigationOptions: {
       title: 'Categories',
-      headerStyle: {
-        backgroundColor: colors.default_primary_color,
-      },
-      headerTitleStyle: {
-        color: colors.text_primary_color,
-      },
-      headerTintColor: colors.text_primary_color,
-    },
-  },
-  Start: {
-    screen: Start,
-    navigationOptions: {
       headerStyle: {
         backgroundColor: colors.default_primary_color,
       },

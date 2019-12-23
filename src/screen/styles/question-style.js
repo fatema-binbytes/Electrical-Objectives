@@ -55,18 +55,21 @@ const styles = StyleSheet.create({
   },
   correct: {
     backgroundColor: colors.correct_answer,
-    color: 'green',
     borderColor: 'green',
   },
   wrong: {
     backgroundColor: colors.wrong_answer,
-    color: 'red',
     borderColor: 'red',
   },
   buttonView: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 16,
+  },
+  isLoading: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 

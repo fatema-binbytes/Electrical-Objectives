@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {View, ScrollView, Text, ActivityIndicator} from 'react-native';
-import {SlideAnimation} from 'react-native-popup-dialog';
 import HTMLView from 'react-native-htmlview';
 import {connect} from 'react-redux';
 
@@ -60,11 +59,6 @@ class Question extends Component {
       <View style={styles.container}>
         <PopupDialog
           visible={this.state.show}
-          animation={
-            new SlideAnimation({
-              slideFrom: 'bottom',
-            })
-          }
           onTouchOutside={() => {
             this.setState({show: false});
           }}>
@@ -76,12 +70,7 @@ class Question extends Component {
           />
         </PopupDialog>
         {this.props.isLoading ? (
-          <View
-            style={{
-              flex: 1,
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}>
+          <View style={styles.isLoading}>
             <ActivityIndicator color={colors.accent_color} size={'large'} />
           </View>
         ) : (

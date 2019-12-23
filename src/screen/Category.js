@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
 import {View, FlatList, ActivityIndicator} from 'react-native';
 
@@ -9,8 +8,8 @@ import Button from '../component/button';
 import styles from './styles/category-style';
 import colors from '../config/colors';
 import PopupDialog from '../component/PopupDialog';
-import Start from '../screen/Start';
-import {SlideAnimation} from 'react-native-popup-dialog';
+import Start from '../component/start';
+
 class Category extends Component {
   constructor(props) {
     super(props);
@@ -70,12 +69,7 @@ class Category extends Component {
             onPress={no => this.start(no)}
             onTouchOutside={() => {
               this.setState({show: false});
-            }}
-            animation={
-              new SlideAnimation({
-                slideFrom: 'bottom',
-              })
-            }>
+            }}>
             <Start onClick={no => this.start(no)} title={this.state.title} />
           </PopupDialog>
         </View>
