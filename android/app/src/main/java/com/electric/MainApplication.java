@@ -1,4 +1,4 @@
-package com.electric;
+package com.faxice.electric;
 
 import android.app.Application;
 import android.content.Context;

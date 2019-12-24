@@ -137,7 +137,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.electric"
+        applicationId "com.faxice.electric"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

@@ -1,4 +1,4 @@
-package com.electric;
+package com.faxice.electric;
 
 import com.facebook.react.ReactActivity;
 

@@ -22,10 +22,10 @@ class Home extends Component {
     this.state = {
       show: false,
     };
-    OneSignal.init('4b11b264-0835-4cfe-a015-735452972dfa');
+    OneSignal.init('792786b8-a4ab-4e4f-99d2-a5b4a71e036e');
   }
   componentDidMount() {
-    // this.checkUpdate();
+    this.checkUpdate();
   }
   checkUpdate() {
     codePush.sync();
